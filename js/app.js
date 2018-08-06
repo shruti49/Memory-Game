@@ -58,11 +58,13 @@ function shuffle(array) {
 
 // Creation of cards dyanamically
 function createCards() {
+  
   //Storing the function in a var
   let shuffledCards = shuffle(cards);
 
   /*Accessing each card using for each loop $ item is the array element i.e its the classname*/
   shuffledCards.forEach(function(item) {
+    
     /*Here we are creating li element and appending it to the ul and assiging the card name as a class name to the icon tag*/
     $("ul.deck").append(`<li class='card'><i class="${item}"></i></li>`);
   });
@@ -73,14 +75,17 @@ createCards();
 
 //Selecting every ele with card class nd binding a click event to each card
 $(".card").click(function() {
+  
   //Selcting current ele being clicked
   openCards($(this));
 });
 
 // Creating a function to open cards
 function openCards(card) {
+  
   /*checking if any card is opened or not if nothing is opened*/
   if (opened.length === 0) {
+    
     //push a card into array
     opened.push(card);
 
@@ -92,14 +97,18 @@ function openCards(card) {
       timer();
       hasTheTimerStarted = true;
     }
-  } else if (opened.length === 1) {
-    //if one card has already been pushed
+  } 
+  //if one card has already been pushed
+  else if (opened.length === 1 && opened[0][0]!== card[0]) {
+    
     //open that card
     card.toggleClass("open show animated headShake");
+
 
     //push that card in array
     opened.push(card);
 
+    
     //a card will open
     timeOut = setTimeout(checkMatch, 500);
   }
@@ -112,6 +121,7 @@ function checkMatch() {
   //an array to keep the track of opened cards
   let open = opened;
 
+  open[0].toggleClass("disable");
   moveCounter();
 
   /*will check the matching of cards using same class name
@@ -134,6 +144,8 @@ function checkMatch() {
     //clear the array for next two cards
     opened = [];
     timeOut2 = setTimeout(matchCounter, 1000);
+  } else if (opened.length === 1 && opened[0][0] !== card[0]) {
+    opened.toggleClass("disable");
   } else {
     open[0].toggleClass("notMatch");
     open[1].toggleClass("notMatch");
@@ -179,13 +191,21 @@ function checkStars() {
 function openWinModal() {
   const star = document.querySelector(".stars").children.length;
   const move = document.querySelector(".moves").innerText;
-  const times = document.querySelector("#timer").innerText; 
+  const times = document.querySelector("#timer").innerText;
   $(".modal-body").html(
-    "You completed the game in " + times + ". <br></br>" + 
-      " You used " + move + " moves." + "<br></br>" 
-    + " You get " + star + " stars."
+    "You completed the game in " +
+      times +
+      ". <br></br>" +
+      " You used " +
+      move +
+      " moves." +
+      "<br></br>" +
+      " You get " +
+      star +
+      " stars."
   );
-  document.querySelector(".reset").addEventListener("click" ,reset);
+
+  document.querySelector(".reset").addEventListener("click", reset);
   $("#myModal").modal("show");
 }
 
@@ -213,7 +233,6 @@ function reset() {
 
 $(".restart").click(function() {
   reset();
-  
 });
 
 //Timer
@@ -236,8 +255,11 @@ function timer() {
         }
 
         t.textContent =
-          (minutes ? (minutes > 9 ? minutes + "Mins": "0" + minutes + "Mins") : "00Mins") +
-          ":" + (seconds > 9 ?  seconds + "Secs"  : "0" + seconds + "Secs") ;
+          (minutes
+            ? minutes > 9 ? minutes + "Mins" : "0" + minutes + "Mins"
+            : "00Mins") +
+          ":" +
+          (seconds > 9 ? seconds + "Secs" : "0" + seconds + "Secs");
       })();
     } else {
       clearInterval(time);
