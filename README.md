@@ -18,3 +18,7 @@ Total 16 cards are there i.e 8 pairs.
  4.After completing the game an alert appears showing the ratings, the time and the no of moves took by the user to compelete the game.
  
  5.There is a play again option in alert window.
+ 
+ 
+ #Link
+ https://shruti49.github.io/Memory-Game/.
