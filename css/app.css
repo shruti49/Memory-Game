@@ -14,12 +14,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-  font-size: 20px;
+    font-size: 20px;
 }
 
 body {
-    background: #ffffff url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BTrHt7uCiu335hjs/desert-background-simple-game-level-location-concept-hd-looping-animation_rfgqov0se_thumbnail-full01.png'); 
-background-repeat: no-repeat;
+    background-color: #89CFF0;
 }
 
 .container {
@@ -30,12 +29,11 @@ background-repeat: no-repeat;
 }
 
 h1 {
-  margin-top: 20px;
+    margin-top: 20px;
     font-family: 'Pacifico', cursive;
     font-weight: 400;
-  color:  #ff6600;
+    color: #ff6600;
 }
-
 
 /*
  * Styles for the deck of cards
@@ -89,7 +87,6 @@ h1 {
     font-size: 33px;
 }
 
-
 /*
  * Styles for the Score Panel
  */
@@ -97,13 +94,13 @@ h1 {
 .score-panel {
     text-align: left;
     width: 345px;
-  margin:30px 5px 10px 5px;
-  padding-left: 10px;
+    margin: 30px 5px 10px 5px;
+    padding-left: 10px;
 }
 
 .score-panel .stars {
     margin: 0px;
-    padding:0px;
+    padding: 0px;
     display: inline-block;
 }
 
@@ -117,11 +114,11 @@ h1 {
     cursor: pointer;
 }
 
-#timer{
-  margin-left:5px;
-  }
+#timer {
+    margin-left: 5px;
+}
 
-.moves{
-  font-family: 'Roboto', sans-serif;
-  padding-left: 5px;
+.moves {
+    font-family: 'Roboto', sans-serif;
+    padding-left: 5px;
 }
