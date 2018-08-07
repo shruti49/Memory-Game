@@ -19,6 +19,6 @@ Total 16 cards are there i.e 8 pairs.
  
  5.There is a play again option in alert window.
  
- 
+ languages used - HTML,CSS,JAVASCRIPT,JQUERY
  #Link
  https://shruti49.github.io/Memory-Game/.
